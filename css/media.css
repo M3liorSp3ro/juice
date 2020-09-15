@@ -4,9 +4,6 @@
     @media (max-width: 1160px) {}
 
     @media (max-width: 1080px) {
-        .header {
-            height: auto;
-        }
 
         .header-social {
             height: 65px;
