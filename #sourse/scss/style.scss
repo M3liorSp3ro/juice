@@ -1,0 +1,264 @@
+@import "_nullstyle";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap');
+
+$mainColor: #5abb33;
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: #000000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.header {
+    position: relative;
+    height: 900px;
+    background-color: #ccdef0;
+    background-image: radial-gradient(circle 675px at center, #fff 0%, #ccdef0 100%);
+    overflow-x: hidden;
+
+    &__img {}
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 0 0;
+    margin-bottom: 90px;
+}
+
+.logo {
+    color: #5abb33;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+    flex: 1 0 auto;
+
+    span {
+        color: #000000;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        margin: 0 50px 0 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        color: #000000;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+
+    &__desc {
+        max-width: 500px;
+        padding-top: 90px;
+        flex: 0 0 auto;
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1.3;
+        margin-bottom: 35px;
+    }
+
+    &__decsrip {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.7;
+        margin-bottom: 35px;
+    }
+
+    &__btn {
+        display: inline-block;
+        padding: 0 35px;
+        height: 65px;
+        border-radius: 60px;
+        background-color: #fadb60;
+        background-image: linear-gradient(to top, #ffcc00 0%, #fadb60 100%);
+
+        color: #000000;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 65px;
+    }
+
+
+    &__img {
+        width: 670px;
+    }
+}
+
+.header-social {
+
+    &__item {
+        font-size: 27px;
+        color: #34383c;
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.footer {
+    height: 114px;
+    background-color: #232323;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: #fada5a;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Burger
+
+.menu-icon {
+    margin-left: 15px;
+    z-index: 19;
+    position: relative;
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.menu-icon-line {
+    position: relative;
+    width: 30px;
+    height: 5px;
+    background-color: $mainColor;
+}
+
+.menu-icon-line::before {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    content: '';
+    width: 30px;
+    height: 5px;
+    background-color: $mainColor;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon-line::after {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    content: '';
+    width: 30px;
+    height: 5px;
+    background-color: $mainColor;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line {
+    background-color: transparent;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line::before {
+    background-color: #fff;
+    transform: rotate(45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon-active .menu-icon-line::after {
+    background-color: #fff;
+    transform: rotate(-45deg);
+    top: 0;
+    transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+// Navigation
+
+.mobile-nav {
+    z-index: 9;
+    display: block;
+    position: absolute;
+    right: -350px;
+    top: 0;
+    height: 100%;
+    width: 350px;
+    padding: 50px;
+    background-color: #6997b1;
+    transition: transform 0.4s ease-in;
+}
+
+.mobile-nav--active {
+
+    transform: translateX(-100%);
+}
+
+.mobile-nav__title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #f6d142;
+}
+
+.mobile-nav__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mobile-nav__item {
+    margin-bottom: 30px;
+}
+
+.mobile-nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.mobile-nav__link:hover {
+    color: #ffd600;
+}
